@@ -187,7 +187,7 @@ const Dashboard = () => {
     return sums;
   };
 
-  function chartData() {
+  async function chartData() {
     const items = data;
     //const groups = groupBySum(items, "Customer_Name", "Total_Amount");
     //let groups;
@@ -354,7 +354,7 @@ const Dashboard = () => {
       );
     });
 
-    Promise.all([p1, p2, p3, p4]).then((results) => {
+    await Promise.all([p1, p2, p3, p4]).then((results) => {
       let flatten = results.flat();
       console.log("result,", flatten);
       setNewSums(flatten);
